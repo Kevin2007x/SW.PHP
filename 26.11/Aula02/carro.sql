@@ -7,6 +7,7 @@
 -- Versão do servidor: 10.4.27-MariaDB
 -- Versão do PHP: 8.0.25
 
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -26,6 +27,25 @@ SET time_zone = "+00:00";
 --
 -- Estrutura para tabela `marcas`
 --
+
+
+
+CREATE TABLE proprietarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    cpf VARCHAR(14) UNIQUE,
+    endereco VARCHAR(255),
+    telefone VARCHAR(15),
+    email VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS proprietarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cpf VARCHAR(14) UNIQUE NOT NULL,
+    endereco VARCHAR(255),
+    telefone VARCHAR(15),
+    email VARCHAR(100)
 
 CREATE TABLE `marcas` (
   `id_marca` int(11) NOT NULL,
